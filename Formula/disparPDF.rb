@@ -2,8 +2,12 @@ class Disparpdf < Formula
   desc "PDF comparison tool — compares text or visual appearance of two PDF files"
   homepage "https://github.com/yuw/disparPDF"
 
-  url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.0.tar.gz"
-  sha256 "a77208a4a93fca0b0c72d47a3b7bcd3bf002fd3fa96d92d0df5624e97156fa88"
+  # リリースタグを打った後は以下の url/sha256 をタグのものに更新する:
+  #   url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.0.tar.gz"
+  #   sha256 "<brew fetch でのhash>"
+  url "https://github.com/yuw/disparPDF/archive/refs/heads/master.tar.gz"
+  version "1.0"
+  sha256 :no_check
 
   license any_of: ["GPL-2.0-or-later"]
 
@@ -41,6 +45,26 @@ class Disparpdf < Formula
     # install_name_tool による変更後に再署名（macOS 26以降で必須）
     system "codesign", "--force", "--sign", "-",
            "#{prefix}/disparPDF.app/Contents/MacOS/disparPDF"
+
+    # /Applications にもコピー
+    apps_dir = Pathname.new("/Applications")
+    if apps_dir.exist? && apps_dir.writable?
+      system "cp", "-r", "#{prefix}/disparPDF.app", "/Applications/disparPDF.app"
+      system "codesign", "--force", "--sign", "-",
+             "/Applications/disparPDF.app/Contents/MacOS/disparPDF"
+    end
+  end
+
+  def caveats
+    <<~EOS
+      disparPDF.app has been installed to:
+        #{opt_prefix}/disparPDF.app
+        /Applications/disparPDF.app (if /Applications is writable)
+
+      CLI commands available:
+        disparPDF   — launch GUI with optional file arguments
+        disparPDFc  — batch/command line mode
+    EOS
   end
 
   test do
