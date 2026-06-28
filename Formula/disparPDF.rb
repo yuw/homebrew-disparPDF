@@ -3,7 +3,7 @@ class Disparpdf < Formula
   homepage "https://github.com/yuw/disparPDF"
 
   url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.0.tar.gz"
-  sha256 "8a98384010138b3bcb84d6cad2f5808d6be02b9832a8e1873e47238ea49f011"
+  sha256 "a77208a4a93fca0b0c72d47a3b7bcd3bf002fd3fa96d92d0df5624e97156fa88"
 
   license any_of: ["GPL-2.0-or-later"]
 
