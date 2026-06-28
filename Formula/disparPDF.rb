@@ -2,12 +2,8 @@ class Disparpdf < Formula
   desc "PDF comparison tool — compares text or visual appearance of two PDF files"
   homepage "https://github.com/yuw/disparPDF"
 
-  # リリースタグを打った後は以下の url/sha256 をタグのものに更新する:
-  #   url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.0.tar.gz"
-  #   sha256 "<brew fetch でのhash>"
-  url "https://github.com/yuw/disparPDF/archive/refs/heads/master.tar.gz"
-  version "1.0"
-  sha256 :no_check
+  url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.0.tar.gz"
+  sha256 "05b01b166319bf564c55056f0236a6bb60a11f6bd58e2ab89b4c35f2a9299748"
 
   license any_of: ["GPL-2.0-or-later"]
 
