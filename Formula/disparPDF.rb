@@ -2,8 +2,8 @@ class Disparpdf < Formula
   desc "PDF comparison tool — compares text or visual appearance of two PDF files"
   homepage "https://github.com/yuw/disparPDF"
 
-  url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.0.9.tar.gz"
-  sha256 "9da70852d9c005159ec3f4f89b9c94937334818d437b78bf5b14eef8d976264d"
+  url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.0.10.tar.gz"
+  sha256 "8e6b02c4647b32b14d066b3ad43a633f2636f1210e97ced1585b9e37ca8b2d6a"
 
   license any_of: ["GPL-2.0-or-later"]
 
