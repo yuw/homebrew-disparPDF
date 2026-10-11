@@ -2,14 +2,15 @@ class Disparpdf < Formula
   desc "PDF comparison tool — compares text or visual appearance of two PDF files"
   homepage "https://github.com/yuw/disparPDF"
 
-  url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.0.16.tar.gz"
-  sha256 "471aaac78af219038a79675405cd17c8ed513b84fa9a822f2678b513990a95c3"
+  url "https://github.com/yuw/disparPDF/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "1430142dea601891cb47706fc2367df98ddcdab1f0832c6e5455bb6941269071"
 
   license any_of: ["GPL-2.0-or-later"]
 
   depends_on "cmake"     => :build
   depends_on "help2man"  => :build
   depends_on "pkgconf"   => :build
+  depends_on "qpdf"
   depends_on "qt@6"
   depends_on "yuw/disparPDF/poppler-qt6"
 
